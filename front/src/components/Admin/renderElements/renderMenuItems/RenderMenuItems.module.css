@@ -1,0 +1,28 @@
+.wrap{
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.in{
+    width: 100%;
+    padding: 4px 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 7px;
+}
+.item{
+    width: 100%;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    background: #F8F8F8;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+}

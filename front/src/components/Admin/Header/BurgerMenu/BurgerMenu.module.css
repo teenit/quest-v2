@@ -1,0 +1,40 @@
+.burger__wrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.burger{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    height: 18px;
+    width: 20px;
+    position: relative;
+}
+.span{
+    left: 0;
+    width: 20px;
+    background-color: #000;
+    display: block;
+    transition: all .3s;
+    height: .4vh;
+}
+.b2, .b3{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.b4{
+    position: absolute;
+    bottom: 0;
+}
+.burger.active .b1,.burger.active .b4{
+    opacity: 0;
+}
+.burger.active .b2{
+    transform: translateY(-50%) rotate(45deg);
+}
+.burger.active .b3{
+    transform: translateY(-50%) rotate(-45deg);
+}
