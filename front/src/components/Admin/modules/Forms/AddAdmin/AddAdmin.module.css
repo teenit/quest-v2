@@ -52,6 +52,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     box-sizing: border-box;
     width: 100%;
     max-width: 100px;
@@ -59,6 +60,15 @@
     border-radius: 50%;
     border: none;
     background-color: #A2A2FF;
+}
+
+.btn__input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
     cursor: pointer;
 }
 
@@ -72,7 +82,7 @@
 .input__wrap{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .input__title{
@@ -83,12 +93,11 @@
 
 .input__in{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
     gap: 10px;
 }
 
-.input__btn{
+/* .input__btn{
     max-height: 56px;
     max-width: 60px;
     border-radius: 10px;
@@ -99,4 +108,22 @@
     box-sizing: border-box;
     background-color: #5C00C4;
     cursor: pointer;
+} */
+
+.input__btn{
+    display: block;
+    margin: auto;
+    max-height: 56px;
+    /* max-width: 170px; */
+    padding: 15px 45px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background-color: #5C00C4;
+    cursor: pointer;
+    font-size: 20px;
+    color: #FFF;
 }

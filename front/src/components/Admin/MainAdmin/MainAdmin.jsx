@@ -15,32 +15,7 @@ const MainAdmin = () =>{
         "Адміни","Кімнати","Квести","Завдання"
     ]
 
-    const contentItemsAdmins = [
-        {
-            photo: 'file:///C:/Projects/quest/front/src/images/ellipse-2.svg',
-            name: "Івана Прокопенко"
-        },
-        {
-            photo: 'file:///C:/Projects/quest/front/src/images/ellipse-1.svg',
-            name: "Микола Бойко"
-        },
-        {
-            photo: 'file:///C:/Projects/quest/front/src/images/ellipse-3.svg',
-            name: "Катерина Мельник"
-        },
-        {
-            photo: 'file:///C:/Projects/quest/front/src/images/ellipse-2.svg',
-            name: "Івана Прокопенко"
-        },
-        {
-            photo: 'file:///C:/Projects/quest/front/src/images/ellipse-1.svg',
-            name: "Микола Бойко"
-        },
-        {
-            photo: 'file:///C:/Projects/quest/front/src/images/ellipse-3.svg',
-            name: "Катерина Мельник"
-        }
-    ]
+    
 
     const contentItemsRooms = [
         {
@@ -137,9 +112,10 @@ const MainAdmin = () =>{
                 </div>
                 <div className={s.routes__wrap}>
                     <Routes>
-                        <Route path="/" element={<GroupContent menuItem={menuItems} content={contentItemsAdmins}/>}/>
-                        <Route path="/room" element={<GroupContent menuItem={menuItems} content={contentItemsRooms}/>}/>
-                        <Route path="/quest" element={<GroupContent menuItem={menuItems} content={contentItemsQuests}/>}/>
+                        <Route path="/" element={<GroupContent menuItem={menuItems}/>}/>
+                        <Route path="/rooms/room" element={<GroupContent menuItem={menuItems} content={contentItemsRooms}/>}/>
+                        <Route path="/quests/quest" element={<GroupContent menuItem={menuItems} content={contentItemsQuests}/>}/>
+                        <Route path="/users/user" element={<GroupContent menuItem={menuItems}/>}/>
                         <Route path="/question" element={<GroupContent menuItem={menuItems} content={contentItemsQuestions}/>}/>
                     </Routes>
                 </div>
