@@ -16,9 +16,9 @@ const MainRouter = () =>{
                 <Route path="/login" element={<LoginLogic />}/>
                 <Route path="/admin/*" element={<MainAdmin />}/>
                 <Route path="/register" element={<RegisterForm />}/>
-                <Route path="/users" element={<Users />}/>
-                <Route path="/rooms" element={<Rooms />}/>
-                <Route path="/quests" element={<Quests />}/>
+                <Route path="/admin/users" element={<Users />}/>
+                <Route path="/admin/rooms" element={<Rooms />}/>
+                <Route path="/admin/quests" element={<Quests />}/>
             </Routes>
         </div>
     )

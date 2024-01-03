@@ -8,7 +8,7 @@ const GroupContent = ({menuItem, content}) =>{
         <div className={s.wrap}>
             <div className={s.in}>
                 <RenderMenuItems menuItem={menuItem}/>
-                <RenderContent menuItem={menuItem} content={content}/>
+                <RenderContent content={content}/>
             </div>
         </div>
     )

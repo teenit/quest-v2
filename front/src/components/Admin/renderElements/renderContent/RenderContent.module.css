@@ -15,110 +15,56 @@
     flex-direction: column;
     gap: 20px;
 }
-.title__wrap{
-    width: 100%;
-    position: relative;
-}
+
 .title{
     text-align: center;
     font-size: 20px;
     margin: 0;
 }
-.title__in{
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.item__moderation__show{
-    position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer;
-}
-.items__wrap{
-    max-height: 220px;
-    overflow-y: scroll;
+
+.content__wrap{
+    width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-}
-.item__row{
-    display: flex;
+    gap: 30px;
     align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.item__row__in{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 35px;
 }
 
-.item__image{
-    border-radius: 50%;
-    max-width: 60px;
-    max-height: 60px;
+.content__image{
     width: 100%;
-    height: 60px;
+    max-width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: none;
     overflow: hidden;
-    background-color: #00000088;
     display: flex;
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
+    background-color: #f8f8f8;
 }
 
-.item__image > img{
+.content__image > img{
     width: 100%;
 }
 
-.item__title__in{
-    font-size: 16px;
-    margin: 0;
-    cursor: pointer;
-    text-decoration: none;
-    color: #000;
-}
-
-.btn__wrap{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 35px;
-}
-
-.btn{
+.content__info{
     width: 100%;
-    max-width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: none;
-    background-color: #A2A2FF;
-    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.item__moderation{
+.info__wrap{
+    width: calc(100% - 20px);
     display: flex;
-    align-items: center;
+    flex-direction: column;
     gap: 10px;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+    padding: 10px;
 }
 
-.status__btn{
-    background-color: rgb(172, 0, 0);
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: none;  
-    cursor: pointer;
-}
-
-.status__true{
-    background-color: rgb(96, 158, 3);
-}
-
-.moderation__btn{
-    cursor: pointer;
+.info__row > p{
+    margin: 0;
 }

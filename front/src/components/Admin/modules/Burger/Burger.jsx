@@ -17,16 +17,16 @@ const Burger = ({setActive})=>{
                     </div>
                     <div className={s.burger__list}>
                         <div className={s.item}>
-                            <NavLink className={s.item__link} to="/users">Користувачі</NavLink>
+                            <NavLink className={s.item__link} to="/admin/users">Користувачі</NavLink>
                         </div>
                         <div className={s.item}>
-                            <NavLink className={s.item__link} to="/rooms">Кімнати</NavLink>
+                            <NavLink className={s.item__link} to="/admin/rooms">Кімнати</NavLink>
                         </div>
                         <div className={s.item}>
-                            <NavLink className={s.item__link} to="/quests">Квести</NavLink>
+                            <NavLink className={s.item__link} to="/admin/quests">Квести</NavLink>
                         </div>
                         <div className={s.item}>
-                            <NavLink className={s.item__link} to="/users">Вийти</NavLink>{/*продумати як працюватиме Вийти*/}
+                            <NavLink className={s.item__link} to="">Вийти</NavLink>{/*продумати як працюватиме Вийти*/}
                         </div>
                         <div className={s.mobile__wrap}>
                             <a href="tel:+380 66 574 46 81">+380 66 574 46 81</a>

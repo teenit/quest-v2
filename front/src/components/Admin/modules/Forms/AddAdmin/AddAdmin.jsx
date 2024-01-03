@@ -9,6 +9,13 @@ const AddAdmin = ({setActive}) =>{
         return name.length >= 2;
     }
 
+    const [email, setEmail] = useState("")
+    const validateEmail = function () {
+        return email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
+    }
+
+    const [image, setImage] = useState([])
+
     const [resultRequested, setResultRequested] = useState(false);
 
     const sxStyles = {
@@ -63,7 +70,9 @@ const AddAdmin = ({setActive}) =>{
             return console.log('EMPTY_DATA');
         }else{
             return console.log( {
-                    name: name
+                    name: name,
+                    email: email,
+                    image: image
                 })
         }
     }
@@ -81,7 +90,10 @@ const AddAdmin = ({setActive}) =>{
                 <div className={s.content__wrap}>
                     <div className={s.btn__wrap}>
                         <div className={s.btn}>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 25 25" fill="none">
+                            <input type="file" required className={s.btn__input} onClick={(e)=>{
+                                setImage(e.target.value)
+                            }}/>
+                            <svg className={s.btn__image} xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 25 25" fill="none">
                                 <path d="M23.4375 10.9375H14.0625V1.5625C14.0625 1.1481 13.8979 0.750672 13.6049 0.457646C13.3118 0.16462 12.9144 0 12.5 0C12.0856 0 11.6882 0.16462 11.3951 0.457646C11.1021 0.750672 10.9375 1.1481 10.9375 1.5625V10.9375H1.5625C1.1481 10.9375 0.750672 11.1021 0.457646 11.3951C0.16462 11.6882 0 12.0856 0 12.5C0 12.9144 0.16462 13.3118 0.457646 13.6049C0.750672 13.8979 1.1481 14.0625 1.5625 14.0625H10.9375V23.4375C10.9375 23.8519 11.1021 24.2493 11.3951 24.5424C11.6882 24.8354 12.0856 25 12.5 25C12.9144 25 13.3118 24.8354 13.6049 24.5424C13.8979 24.2493 14.0625 23.8519 14.0625 23.4375V14.0625H23.4375C23.8519 14.0625 24.2493 13.8979 24.5424 13.6049C24.8354 13.3118 25 12.9144 25 12.5C25 12.0856 24.8354 11.6882 24.5424 11.3951C24.2493 11.1021 23.8519 10.9375 23.4375 10.9375Z" fill="white"/>
                             </svg>
                         </div>
@@ -90,8 +102,9 @@ const AddAdmin = ({setActive}) =>{
                         <p>Додати нового адміна</p>
                     </div>
                     <div className={s.input__wrap}>
-                        <p className={s.input__title}>Ім'я:</p>
+                        
                         <div className={s.input__in}>
+                            <p className={s.input__title}>Ім'я:</p>
                             <TextField 
                                 error={!validateName() && resultRequested}
                                 helperText={(!validateName() && resultRequested)&&("Ім'я має бути довше 2 символів")}
@@ -106,12 +119,31 @@ const AddAdmin = ({setActive}) =>{
                                 inputProps={{...inputPropsStyles}}
                                 InputProps={{...InputPropsStyles}}  
                             />
-                            <button className={s.input__btn} onClick={sendData}>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="56" viewBox="0 0 60 56" fill="none">
-                                    <path d="M44.2812 25.6987L20.9683 14.4065C19.2855 13.5914 17.5012 15.3242 18.2708 17.0283L22.6282 26.6768C22.8646 27.2002 22.8646 27.7998 22.6282 28.3232L18.2708 37.9717C17.5012 39.6758 19.2826 41.41 20.9654 40.5949L44.2839 29.3C45.7881 28.5714 45.7854 26.4273 44.2812 25.6987Z" stroke="white" strokeWidth="3"/>
-                                </svg>
-                            </button>
                         </div>
+                        <div className={s.input__in}> 
+                            <p className={s.input__title}>Email:</p>
+                            <TextField 
+                                error={!validateEmail() && resultRequested}
+                                helperText={(!validateEmail() && resultRequested)&&("Ім'я має бути довше 2 символів")}
+                                fullWidth={true}
+                                size="large"
+                                type="email"
+                                required
+                                variant="outlined"
+                                onChange={(e)=>{setEmail(e.target.value)}}
+                                value={email}
+                                sx={{...sxStyles}}
+                                inputProps={{...inputPropsStyles}}
+                                InputProps={{...InputPropsStyles}}  
+                            />
+                            
+                        </div>
+                        <button className={s.input__btn} onClick={sendData}>
+                            <p>Надіслати</p>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="56" viewBox="0 0 60 56" fill="none">
+                                <path d="M44.2812 25.6987L20.9683 14.4065C19.2855 13.5914 17.5012 15.3242 18.2708 17.0283L22.6282 26.6768C22.8646 27.2002 22.8646 27.7998 22.6282 28.3232L18.2708 37.9717C17.5012 39.6758 19.2826 41.41 20.9654 40.5949L44.2839 29.3C45.7881 28.5714 45.7854 26.4273 44.2812 25.6987Z" stroke="white" strokeWidth="3"/>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </form>

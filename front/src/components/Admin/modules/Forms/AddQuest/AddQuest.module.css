@@ -52,6 +52,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
     box-sizing: border-box;
     width: 100%;
     max-width: 100px;
@@ -59,6 +60,15 @@
     border-radius: 50%;
     border: none;
     background-color: #A2A2FF;
+}
+
+.btn__input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
     cursor: pointer;
 }
 
