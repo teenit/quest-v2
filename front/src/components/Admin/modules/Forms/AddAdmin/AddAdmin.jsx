@@ -66,7 +66,7 @@ const AddAdmin = ({setActive}) =>{
     const sendData = function (event) {
         event.preventDefault()
         setResultRequested(true)
-        if(!validateName()){
+        if(!validateName() || !validateEmail()){
             return console.log('EMPTY_DATA');
         }else{
             return console.log( {
@@ -124,7 +124,7 @@ const AddAdmin = ({setActive}) =>{
                             <p className={s.input__title}>Email:</p>
                             <TextField 
                                 error={!validateEmail() && resultRequested}
-                                helperText={(!validateEmail() && resultRequested)&&("Ім'я має бути довше 2 символів")}
+                                helperText={(!validateEmail() && resultRequested)&&("Not correctly email")}
                                 fullWidth={true}
                                 size="large"
                                 type="email"

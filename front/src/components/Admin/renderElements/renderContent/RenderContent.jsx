@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import s from "./RenderContent.module.css"
 import { NavLink, Route, Routes } from "react-router-dom";
 
-const RenderContent = () =>{
+const RenderContent = ({data = {}, room = false, quest = false}) =>{
 
     const userInfo = {
         photo: "file:///C:/Projects/quest/front/src/images/ellipse-2.svg",

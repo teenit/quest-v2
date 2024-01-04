@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 const QuestRow = ({item, index, showModeretaion}) =>{
     const [itemFull, setItemFull] = useState({item})
     const [active, setActive] = useState(true)
+    const [edit, setEdit] = useState(false)
     return(
         <div className={s.item__row} key={index}>
             <div className={s.item__row__in}>
@@ -13,14 +14,16 @@ const QuestRow = ({item, index, showModeretaion}) =>{
                     {/* абсолютні посилання для фото */}
                 </div>
                 <div className={s.item__title}>
-                    <NavLink className={s.item__title__in} to={{
+                    {!showModeretaion ?  <NavLink className={s.item__title__in} to={{
                         pathname: '/admin/quests/quest/',
                         search: '?quest=' + item.id,
                     }}>
-                        <input className={s.item__input} type="text" value={item.name} /*{showModeretaion ? disabled : null}*/ onChange={(e)=>{
+                        {item.name}
+                    </NavLink> :  <input className={s.item__input} type="text" value={item.name} /*{showModeretaion ? disabled : null}*/ onChange={(e)=>{
                             setItemFull({...item, name: e.target.value})
-                        }}/>
-                    </NavLink>
+                        }}/>}
+                   
+                   
                     {/* проставити посилання в залежності від роуту*/}
                 </div>
             </div>
